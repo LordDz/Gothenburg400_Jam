@@ -5,6 +5,7 @@ using RPGM.Gameplay;
 using RPGM.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPGM.UI
 {
@@ -40,16 +41,20 @@ namespace RPGM.UI
                 var e = Instantiate(elementPrototype);
                 e.transform.parent = transform;
                 e.transform.localPosition = cursor;
-                e.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = model.GetInventorySprite(i);
-                e.transform.GetChild(1).GetComponent<TextMeshPro>().text = $"x {count}";
+                var child0 = e.transform.GetChild(0);
+                var child0Img = child0.GetComponent<Image>();
+                var item = model.GetInventoryItem(i);
+                child0Img.sprite = model.GetInventorySprite(i);
+                child0.GetComponent<Button>().onClick = item.OnClick;
+
                 e.gameObject.SetActive(true);
-                cursor.y -= stepSize;
+                cursor.x += stepSize;
             }
 
-            if (displayCount > 0)
-                sizer.Show();
-            else
-                sizer.Hide();
+            //if (displayCount > 0)
+            //    sizer.Show();
+            //else
+            //    sizer.Hide();
         }
     }
 }

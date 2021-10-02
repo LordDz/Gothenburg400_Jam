@@ -15,10 +15,18 @@ namespace RPGM.UI
         public int selectedButton = 0;
         public int buttonCount = 0;
 
+        private MousePointer mousePointer;
+
         SpriteButton[] buttons;
         Camera mainCamera;
         GameModel model = Schedule.GetModel<GameModel>();
         SpriteUIElement spriteUIElement;
+
+        private void Start()
+        {
+            mousePointer = FindObjectOfType<MousePointer>();
+        }
+
         public void FocusButton(int direction)
         {
             if (buttonCount > 0)
@@ -75,6 +83,7 @@ namespace RPGM.UI
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 0;
             selectedButton = -1;
+            mousePointer.TalkStart();
         }
 
         public void Show(Vector3 position, string text, string buttonA)
@@ -87,6 +96,7 @@ namespace RPGM.UI
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 1;
             selectedButton = -1;
+            mousePointer.TalkStart();
         }
 
         public void Show(Vector3 position, string text, string buttonA, string buttonB)
@@ -99,6 +109,7 @@ namespace RPGM.UI
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 2;
             selectedButton = -1;
+            mousePointer.TalkStart();
         }
 
         void SetPosition(Vector3 position)
@@ -124,6 +135,7 @@ namespace RPGM.UI
         {
             UserInterfaceAudio.OnHideDialog();
             dialogLayout.gameObject.SetActive(false);
+            mousePointer.TalkEnd();
         }
 
         public void SetIcon(Sprite icon) => dialogLayout.SetIcon(icon);

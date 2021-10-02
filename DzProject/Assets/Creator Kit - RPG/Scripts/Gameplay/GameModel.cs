@@ -22,12 +22,14 @@ namespace RPGM.Gameplay
 
         Dictionary<GameObject, HashSet<string>> conversations = new Dictionary<GameObject, HashSet<string>>();
 
-        Dictionary<string, int> inventory = new Dictionary<string, int>();
+        Dictionary<string, InventoryItem> inventory = new Dictionary<string, InventoryItem>();
         Dictionary<string, Sprite> inventorySprites = new Dictionary<string, Sprite>();
 
         HashSet<string> storyItems = new HashSet<string>();
 
         public IEnumerable<string> InventoryItems => inventory.Keys;
+
+
 
         public Sprite GetInventorySprite(string name)
         {
@@ -39,33 +41,40 @@ namespace RPGM.Gameplay
         public int GetInventoryCount(string name)
         {
             int c;
+            //inventory.TryGetValue(name, out c);
+            return 1;
+        }
+
+        public InventoryItem GetInventoryItem(string name)
+        {
+            InventoryItem c;
             inventory.TryGetValue(name, out c);
             return c;
         }
 
         public void AddInventoryItem(InventoryItem item)
         {
-            int c = 0;
-            inventory.TryGetValue(item.name, out c);
-            c += item.count;
+            //InventoryItem c;
+            //inventory.TryGetValue(item.name, out c);
+            inventory.Add(item.name, item);
+
             inventorySprites[item.name] = item.sprite;
-            inventory[item.name] = c;
+            //inventory[item.name] = c;
             inventoryController.Refresh();
         }
 
-        public bool HasInventoryItem(string name, int count = 1)
+        public bool HasInventoryItem(string name)
         {
-            int c = 0;
+            InventoryItem c;
             inventory.TryGetValue(name, out c);
-            return c >= count;
+            return c ? true : false;
         }
 
         public bool RemoveInventoryItem(InventoryItem item, int count)
         {
-            int c = 0;
+            InventoryItem c;
             inventory.TryGetValue(item.name, out c);
-            c -= count;
-            if (c < 0) return false;
+            if (!c) return false;
             inventory[item.name] = c;
             inventoryController.Refresh();
             return true;

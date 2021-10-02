@@ -1,5 +1,4 @@
 using RPGM.Core;
-using RPGM.Gameplay;
 using UnityEngine;
 
 namespace RPGM.Gameplay
@@ -10,6 +9,7 @@ namespace RPGM.Gameplay
     public class NPCController : MonoBehaviour
     {
         public ConversationScript[] conversations;
+        private bool hasTalked = false;
 
         Quest activeQuest = null;
 
@@ -24,6 +24,13 @@ namespace RPGM.Gameplay
 
         public void OnCollisionEnter2D(Collision2D collision)
         {
+            if (hasTalked)
+            {
+                return;
+            }
+
+            hasTalked = true;
+
             var c = GetConversation();
             if (c != null)
             {
@@ -56,7 +63,9 @@ namespace RPGM.Gameplay
         ConversationScript GetConversation()
         {
             if (activeQuest == null)
+            {
                 return conversations[0];
+            }
             foreach (var q in quests)
             {
                 if (q == activeQuest)

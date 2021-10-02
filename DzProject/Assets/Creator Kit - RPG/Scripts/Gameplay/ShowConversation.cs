@@ -77,6 +77,7 @@ namespace RPGM.Events
             if (ci.options.Count == 0)
             {
                 //do nothing
+                model.dialog.Hide();
             }
             else
             {

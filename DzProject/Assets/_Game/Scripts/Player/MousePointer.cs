@@ -21,6 +21,7 @@ public class MousePointer : MonoBehaviour
     public CharacterController2D Player;
 
     private bool isInUI = false;
+    private bool isInTalk = false;
 
     public void Start()
     {
@@ -37,7 +38,7 @@ public class MousePointer : MonoBehaviour
 
     private void MouseClick()
     {
-        if (isInUI)
+        if (isInUI || isInTalk)
         {
             return;
         }
@@ -45,6 +46,17 @@ public class MousePointer : MonoBehaviour
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f));
         MouseClickImg.position = mousePos;
         Player.GoToPosition(mousePos);
+    }
+
+    public void TalkStart()
+    {
+        isInTalk = true;
+        Player.GoToPosition(Vector3.zero);
+    }
+
+    public void TalkEnd()
+    {
+        isInTalk = false;
     }
 
     public void UIEnter()

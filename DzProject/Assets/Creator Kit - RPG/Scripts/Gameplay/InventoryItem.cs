@@ -2,7 +2,7 @@ using RPGM.Core;
 using RPGM.Gameplay;
 using RPGM.UI;
 using UnityEngine;
-
+using static UnityEngine.UI.Button;
 
 namespace RPGM.Gameplay
 {
@@ -15,6 +15,7 @@ namespace RPGM.Gameplay
     {
         public int count = 1;
         public Sprite sprite;
+        public ButtonClickedEvent OnClick;
 
         GameModel model = Schedule.GetModel<GameModel>();
 
