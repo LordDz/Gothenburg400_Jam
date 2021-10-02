@@ -17,17 +17,30 @@ namespace RPGM.Gameplay
 
         GameModel model = Schedule.GetModel<GameModel>();
 
+        CharacterController2D plr;
+
+        private float talkDistance = 10f;
+
         void OnEnable()
         {
+            plr = FindObjectOfType<CharacterController2D>();
             quests = gameObject.GetComponentsInChildren<Quest>();
         }
 
-        public void OnCollisionEnter2D(Collision2D collision)
+        public void TalkTo()
         {
             if (hasTalked)
             {
                 return;
             }
+
+            float distance = Vector2.Distance(transform.position, plr.transform.position);
+
+            if (distance > talkDistance)
+            {
+                return;
+            }
+
 
             hasTalked = true;
 

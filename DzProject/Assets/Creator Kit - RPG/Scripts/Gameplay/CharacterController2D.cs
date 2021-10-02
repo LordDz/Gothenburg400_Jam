@@ -15,7 +15,6 @@ namespace RPGM.Gameplay
 
         public Vector3 nextMoveCommand;
         public Animator animator;
-        public bool flipX = false;
         private Vector3 desiredPos;
 
         new Rigidbody2D rigidbody2D;
@@ -49,7 +48,7 @@ namespace RPGM.Gameplay
         {
             UpdateAnimator(nextMoveCommand);
             rigidbody2D.velocity = Vector2.SmoothDamp(rigidbody2D.velocity, nextMoveCommand * speed, ref currentVelocity, acceleration, speed);
-            spriteRenderer.flipX = rigidbody2D.velocity.x >= 0 ? true : false;
+            spriteRenderer.flipX = rigidbody2D.velocity.x >= 0 ? false : true;
         }
 
         void UpdateAnimator(Vector3 direction)
