@@ -24,7 +24,7 @@ namespace Assets._Game.Scripts.Levels
             Debug.Log("Watch clicked!");
         }
 
-        public void OnClickKey()
+        public void OnClickDiary()
         {
             Debug.Log("Key clicked!");
         }

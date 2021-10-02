@@ -1,3 +1,5 @@
+using Assets._Game.Scripts.Levels;
+using Assets._Game.Scripts.UI;
 using RPGM.Core;
 using UnityEngine;
 
@@ -22,26 +24,60 @@ namespace RPGM.Gameplay
         private float talkDistance = 1.6f;
         public InventoryItem inventoryItem;
 
+        private NPCTalkInteract NPCTalkInteract;
+
         void OnEnable()
         {
             plr = FindObjectOfType<CharacterController2D>();
             quests = gameObject.GetComponentsInChildren<Quest>();
+            NPCTalkInteract = GetComponentInChildren<NPCTalkInteract>();
         }
 
-        public bool CanTalkTo()
+        public bool IsWithinDistance()
         {
             return Vector2.Distance(transform.position, plr.transform.position) <= talkDistance;
-
         }
 
-        public void TalkTo()
+        public void SwitchToNextScene()
+        {
+            if (IsWithinDistance())
+            {
+                SceneSwitcher sceneSwitcher = FindObjectOfType<SceneSwitcher>();
+                sceneSwitcher.SwitchToNextScene();
+            }
+        }
+
+        public void TalkToFromItem(bool allowRepeat = false)
         {
             if (hasTalked)
             {
                 return;
             }
 
-            if (!CanTalkTo())
+            if (!allowRepeat)
+            {
+                hasTalked = true;
+
+                if (NPCTalkInteract)
+                {
+                    NPCTalkInteract.SetHasTalked();
+                }
+            }
+
+            var c = GetConversation();
+            if (c != null)
+            {
+                var ev = Schedule.Add<Events.ShowConversation>();
+                ev.conversation = c;
+                ev.npc = this;
+                ev.gameObject = gameObject;
+                ev.conversationItemKey = "";
+            }
+        }
+
+        public void TalkTo()
+        {
+            if (hasTalked || !IsWithinDistance())
             {
                 return;
             }
@@ -52,6 +88,10 @@ namespace RPGM.Gameplay
             }
 
             hasTalked = true;
+            if (NPCTalkInteract)
+            {
+                NPCTalkInteract.SetHasTalked();
+            }
 
             var c = GetConversation();
             if (c != null)
@@ -84,6 +124,11 @@ namespace RPGM.Gameplay
 
         ConversationScript GetConversation()
         {
+            if (conversations.Length == 0)
+            {
+                return null;
+            }
+
             if (activeQuest == null)
             {
                 return conversations[0];

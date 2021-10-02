@@ -15,8 +15,8 @@ namespace RPGM.Gameplay
     {
         public int count = 1;
         public Sprite sprite;
-        public ButtonClickedEvent OnClick;
         public NPCController InteractTalker;
+        public ButtonClickedEvent OnClick;
 
         GameModel model = Schedule.GetModel<GameModel>();
 
@@ -25,7 +25,16 @@ namespace RPGM.Gameplay
             MessageBar.Show($"Picked up: {name} x {count}");
             model.AddInventoryItem(this);
             UserInterfaceAudio.OnCollect();
+
             gameObject.SetActive(false);
+        }
+
+        public void InventoryClickOnItem()
+        {
+            if (InteractTalker)
+            {
+                InteractTalker.TalkToFromItem(true);
+            }
         }
     }
 }

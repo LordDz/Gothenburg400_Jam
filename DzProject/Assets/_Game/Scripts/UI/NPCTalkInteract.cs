@@ -8,20 +8,36 @@ namespace Assets._Game.Scripts.UI
      , IPointerExitHandler
     {
         MousePointer mousePointer;
+        private bool CanInteract = true;
+
+        public MouseImgType ImgType = MouseImgType.Talk;
+
         // Use this for initialization
         void Start()
         {
             mousePointer = FindObjectOfType<MousePointer>();
         }
 
+        public void SetHasTalked()
+        {
+            CanInteract = false;
+            mousePointer.SetCursorImg(MouseImgType.Walk);
+        }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
-            mousePointer.SetCursorImg(MouseImgType.Talk);
+            if (CanInteract)
+            {
+                mousePointer.SetCursorImg(ImgType);
+            }
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            mousePointer.SetCursorImg(MouseImgType.Walk);
+            if (CanInteract)
+            {
+                mousePointer.SetCursorImg(MouseImgType.Walk);
+            }
         }
     }
 }
