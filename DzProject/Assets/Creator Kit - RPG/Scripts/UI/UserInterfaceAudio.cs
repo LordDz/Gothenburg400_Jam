@@ -60,8 +60,8 @@ namespace RPGM.UI
 
         public static void Speak(int seed, int syllables, float pitch)
         {
-            if (instance != null)
-                instance.PlaySpeech(seed, syllables, pitch);
+            //if (instance != null)
+            //    instance.PlaySpeech(seed, syllables, pitch);
         }
 
         public static void OnCollect()
