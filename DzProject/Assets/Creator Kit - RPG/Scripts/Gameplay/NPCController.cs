@@ -19,12 +19,19 @@ namespace RPGM.Gameplay
 
         CharacterController2D plr;
 
-        private float talkDistance = 10f;
+        private float talkDistance = 1.6f;
+        public InventoryItem inventoryItem;
 
         void OnEnable()
         {
             plr = FindObjectOfType<CharacterController2D>();
             quests = gameObject.GetComponentsInChildren<Quest>();
+        }
+
+        public bool CanTalkTo()
+        {
+            return Vector2.Distance(transform.position, plr.transform.position) <= talkDistance;
+
         }
 
         public void TalkTo()
@@ -34,13 +41,15 @@ namespace RPGM.Gameplay
                 return;
             }
 
-            float distance = Vector2.Distance(transform.position, plr.transform.position);
-
-            if (distance > talkDistance)
+            if (!CanTalkTo())
             {
                 return;
             }
 
+            if (inventoryItem)
+            {
+                inventoryItem.PickupItem();
+            }
 
             hasTalked = true;
 

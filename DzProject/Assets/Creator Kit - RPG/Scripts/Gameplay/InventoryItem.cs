@@ -10,28 +10,19 @@ namespace RPGM.Gameplay
     /// Marks a gameObject as a collectable item.
     /// </summary>
     [ExecuteInEditMode]
-    [RequireComponent(typeof(SpriteRenderer), typeof(CircleCollider2D))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class InventoryItem : MonoBehaviour
     {
         public int count = 1;
         public Sprite sprite;
         public ButtonClickedEvent OnClick;
+        public NPCController InteractTalker;
 
         GameModel model = Schedule.GetModel<GameModel>();
 
-        void Reset()
+        public void PickupItem()
         {
-            GetComponent<CircleCollider2D>().isTrigger = true;
-        }
-
-        void OnEnable()
-        {
-            //GetComponent<SpriteRenderer>().sprite = sprite;
-        }
-
-        public void OnTriggerEnter2D(Collider2D collider)
-        {
-            MessageBar.Show($"You collected: {name} x {count}");
+            MessageBar.Show($"Picked up: {name} x {count}");
             model.AddInventoryItem(this);
             UserInterfaceAudio.OnCollect();
             gameObject.SetActive(false);
