@@ -26,7 +26,7 @@ namespace RPGM.Gameplay
 
         void OnEnable()
         {
-            GetComponent<SpriteRenderer>().sprite = sprite;
+            //GetComponent<SpriteRenderer>().sprite = sprite;
         }
 
         public void OnTriggerEnter2D(Collider2D collider)

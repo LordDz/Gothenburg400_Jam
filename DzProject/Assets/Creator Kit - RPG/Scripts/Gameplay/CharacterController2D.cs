@@ -11,7 +11,7 @@ namespace RPGM.Gameplay
         public float speed = 1;
         public float acceleration = 2;
         public float stepSize = 0.1f;
-        public float MinDistanceMovement = 0f;
+        private float MinDistanceMovement = 0.2f;
 
         public Vector3 nextMoveCommand;
         public Animator animator;
@@ -63,6 +63,8 @@ namespace RPGM.Gameplay
 
         void Update()
         {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+            spriteRenderer.sortingOrder = -(int)(transform.position.y * 100);
             if (desiredPos != Vector3.zero)
             {
                 Vector3 movement = Vector3.zero;
@@ -71,6 +73,7 @@ namespace RPGM.Gameplay
 
                 if (distX > MinDistanceMovement && Mathf.Abs(desiredPos.x) > 0)
                 {
+
                     if (transform.position.x > desiredPos.x)
                     {
                         movement = Vector3.left;
@@ -84,6 +87,7 @@ namespace RPGM.Gameplay
                 if (distY > MinDistanceMovement && Mathf.Abs(desiredPos.y) > 0)
                 {
                     if (transform.position.y > desiredPos.y)
+
                     {
                         movement += Vector3.down;
                     }
