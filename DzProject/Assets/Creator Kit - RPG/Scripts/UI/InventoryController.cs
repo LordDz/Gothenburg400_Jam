@@ -50,11 +50,25 @@ namespace RPGM.UI
                 e.gameObject.SetActive(true);
                 cursor.x += stepSize;
             }
+        }
 
-            //if (displayCount > 0)
-            //    sizer.Show();
-            //else
-            //    sizer.Hide();
+        /// <summary>
+        /// Yes this code is bad, but aint got time to write it well.
+        /// </summary>
+        public void RemoveItemAtFirstIndex()
+        {
+            //int nr = 0;
+            //var items = FindObjectsOfType<RectTransform>();
+            //foreach (var item in items)
+            //{
+            //    if (item.tag == "items")
+            //    {
+            //        Debug.Log("item name: " + item.name + " - " + nr);
+            //        nr++;
+            //        item.gameObject.SetActive(false);
+            //    }
+            //}
+
         }
     }
 }

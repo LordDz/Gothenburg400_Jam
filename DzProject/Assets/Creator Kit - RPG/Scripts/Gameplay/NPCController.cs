@@ -1,6 +1,7 @@
 using Assets._Game.Scripts.Levels;
 using Assets._Game.Scripts.UI;
 using RPGM.Core;
+using RPGM.UI;
 using UnityEngine;
 
 namespace RPGM.Gameplay
@@ -28,6 +29,8 @@ namespace RPGM.Gameplay
 
         public GameObject ObjEnableWhenTalk;
         public GameObject ObjDisableWhenTalk;
+        public InventoryController InventoryController;
+        public bool RemoveFirstItemInInventory = false;
 
         void OnEnable()
         {
@@ -65,6 +68,16 @@ namespace RPGM.Gameplay
                 {
                     NPCTalkInteract.SetHasTalked();
                 }
+            }
+
+            if (ObjEnableWhenTalk)
+            {
+                ObjEnableWhenTalk.SetActive(true);
+            }
+
+            if (ObjDisableWhenTalk)
+            {
+                ObjDisableWhenTalk.SetActive(false);
             }
 
             var c = GetConversation();
@@ -114,6 +127,15 @@ namespace RPGM.Gameplay
                 ev.npc = this;
                 ev.gameObject = gameObject;
                 ev.conversationItemKey = "";
+            }
+
+
+            if (RemoveFirstItemInInventory)
+            {
+                if (InventoryController)
+                {
+                    InventoryController.RemoveItemAtFirstIndex();
+                }
             }
         }
 
