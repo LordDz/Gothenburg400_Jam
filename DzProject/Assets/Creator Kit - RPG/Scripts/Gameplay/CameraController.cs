@@ -13,6 +13,7 @@ namespace RPGM.Gameplay
     {
         public Transform focus;
         public float smoothTime = 2;
+        public bool DontMoveY = false;
 
         Vector3 offset;
 
@@ -23,7 +24,14 @@ namespace RPGM.Gameplay
 
         void Update()
         {
-            transform.position = Vector3.Lerp(transform.position, focus.position - offset, Time.deltaTime * smoothTime);
+            if (DontMoveY)
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(focus.position.x, -2.61f, focus.position.z) - offset, Time.deltaTime * smoothTime);
+            }
+            else
+            {
+                transform.position = Vector3.Lerp(transform.position, focus.position - offset, Time.deltaTime * smoothTime);
+            }
         }
     }
 }

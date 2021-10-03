@@ -21,10 +21,13 @@ namespace RPGM.Gameplay
 
         CharacterController2D plr;
 
-        private float talkDistance = 1.6f;
+        public float talkDistance = 1.6f;
         public InventoryItem inventoryItem;
 
         private NPCTalkInteract NPCTalkInteract;
+
+        public GameObject ObjEnableWhenTalk;
+        public GameObject ObjDisableWhenTalk;
 
         void OnEnable()
         {
@@ -85,6 +88,16 @@ namespace RPGM.Gameplay
             if (inventoryItem)
             {
                 inventoryItem.PickupItem();
+            }
+
+            if (ObjEnableWhenTalk)
+            {
+                ObjEnableWhenTalk.SetActive(true);
+            }
+
+            if (ObjDisableWhenTalk)
+            {
+                ObjDisableWhenTalk.SetActive(false);
             }
 
             hasTalked = true;
