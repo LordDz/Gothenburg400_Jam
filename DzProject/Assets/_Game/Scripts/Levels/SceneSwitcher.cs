@@ -11,5 +11,15 @@ namespace Assets._Game.Scripts.Levels
         {
             SceneManager.LoadScene(SceneToSwitchTo);
         }
+
+        public void BackToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
     }
 }

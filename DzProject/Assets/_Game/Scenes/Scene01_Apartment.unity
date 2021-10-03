@@ -869,6 +869,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 164971902}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &291293621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,6 +1865,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &795171415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +1988,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &865095437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3103,7 +3109,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1208827433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361975691}
+        m_TargetAssemblyTypeName: Assets._Game.Scripts.Levels.SceneSwitcher, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1208827433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3532,6 +3550,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!1001 &1442670342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3899,6 +3919,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83c8d37d500664cd589dc84f2feadcf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1827161571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5761824928094277158, guid: 5a4f6618b2af7c242896951deae6693e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6065032395921504948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1827161572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827161571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83681062251b7346b491454eecf9553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1847201418
@@ -4396,6 +4434,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &2089301588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4493,6 +4533,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &2122989796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4561,6 +4603,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!224 &3672586394956794453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4694,6 +4738,75 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!1001 &6065032395921504948
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933157696516147818, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5761824928094277158, guid: 5a4f6618b2af7c242896951deae6693e,
+        type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5a4f6618b2af7c242896951deae6693e, type: 3}
 --- !u!1001 &6069898977267535474
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -521,6 +521,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &291293621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,6 +1517,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &865095437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2193,7 +2197,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1208827433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 361975691}
+        m_TargetAssemblyTypeName: Assets._Game.Scripts.Levels.SceneSwitcher, Assembly-CSharp
+        m_MethodName: BackToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1208827433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,6 +2509,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!1001 &1442670342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2693,6 +2711,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 1677928448}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!4 &1487230443
 Transform:
   m_ObjectHideFlags: 0
@@ -3600,6 +3620,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &2089301588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3797,6 +3819,8 @@ MonoBehaviour:
   inventoryItem: {fileID: 0}
   ObjEnableWhenTalk: {fileID: 0}
   ObjDisableWhenTalk: {fileID: 0}
+  InventoryController: {fileID: 0}
+  RemoveFirstItemInInventory: 0
 --- !u!114 &2122989796
 MonoBehaviour:
   m_ObjectHideFlags: 0

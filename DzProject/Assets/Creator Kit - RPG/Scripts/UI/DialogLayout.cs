@@ -25,6 +25,7 @@ namespace RPGM.UI
         {
             buttons = new[] { buttonA, buttonB, buttonC };
             minSize = spriteRenderer.size;
+            buttonC.gameObject.SetActive(false);
         }
 
         void OnClick()
@@ -63,7 +64,7 @@ namespace RPGM.UI
             buttonA.gameObject.SetActive(true);
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(false);
-            buttonC.gameObject.SetActive(false);
+            //buttonC.gameObject.SetActive(false);
         }
 
         public void SetText(string text, string buttonAText, string buttonBText)
@@ -73,7 +74,7 @@ namespace RPGM.UI
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(true);
             buttonB.SetText(buttonBText);
-            buttonC.gameObject.SetActive(false);
+            //buttonC.gameObject.SetActive(false);
         }
 
         public void SetText(string text, string buttonAText, string buttonBText, string buttonCText)
@@ -83,8 +84,8 @@ namespace RPGM.UI
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(true);
             buttonB.SetText(buttonBText);
-            buttonC.gameObject.SetActive(true);
-            buttonC.SetText(buttonCText);
+            //buttonC.gameObject.SetActive(true);
+            //buttonC.SetText(buttonCText);
         }
 
 
@@ -116,7 +117,7 @@ namespace RPGM.UI
             var s = (Vector3)spriteRenderer.size;
             buttonA.transform.localPosition = new Vector3(-0.1f - buttonA.Size.x * 0.5f, (-s.y * 0.5f) - buttonA.Size.y * 0.5f - 0.05f, 0);
             buttonB.transform.localPosition = new Vector3(+0.1f + buttonB.Size.x * 0.5f, (-s.y * 0.5f) - buttonB.Size.y * 0.5f - 0.05f, 0);
-            buttonC.transform.localPosition = new Vector3(0, (-s.y * 0.5f) - buttonC.Size.y * 0.5f - 0.1f - buttonC.Size.y, 0);
+            //buttonC.transform.localPosition = new Vector3(0, (-s.y * 0.5f) - buttonC.Size.y * 0.5f - 0.1f - buttonC.Size.y, 0);
         }
 
         void ScaleBackgroundToFitText()
