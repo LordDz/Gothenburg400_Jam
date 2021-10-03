@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Game/Scenes/Scene04_Island.unity
     guid: c3331b19a376380448dfaf29c99687f0
+  - enabled: 1
+    path: Assets/_Game/Scenes/Scene05_House.unity
+    guid: 7770ada5aec190c419fc0f252574db47
   m_configObjects: {}

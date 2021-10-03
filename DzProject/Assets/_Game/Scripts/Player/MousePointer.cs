@@ -25,7 +25,7 @@ public class MousePointer : MonoBehaviour
 
     public void Start()
     {
-        Cursor.SetCursor(CursorWalk, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(CursorWalk, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     void Update()
@@ -74,13 +74,13 @@ public class MousePointer : MonoBehaviour
         switch (mouseImgType)
         {
             case MouseImgType.Interact:
-                Cursor.SetCursor(CursorInteract, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(CursorInteract, Vector2.zero, CursorMode.ForceSoftware);
                 break;
             case MouseImgType.Walk:
-                Cursor.SetCursor(CursorWalk, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(CursorWalk, Vector2.zero, CursorMode.ForceSoftware);
                 break;
             case MouseImgType.Talk:
-                Cursor.SetCursor(CursorTalk, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(CursorTalk, Vector2.zero, CursorMode.ForceSoftware);
                 break;
 
         }

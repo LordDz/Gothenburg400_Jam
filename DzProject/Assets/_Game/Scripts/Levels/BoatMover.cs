@@ -24,7 +24,10 @@ namespace Assets._Game.Scripts.Levels
             if (!isDone && timeWait > timeDone)
             {
                 isDone = true;
-                ObjEnableWhenDone.SetActive(true);
+                if (ObjEnableWhenDone)
+                {
+                    ObjEnableWhenDone.SetActive(true);
+                }
                 enabled = false;
             }
             else

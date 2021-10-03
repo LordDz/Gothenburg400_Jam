@@ -22,7 +22,7 @@ namespace RPGM.Gameplay
 
         public void PickupItem()
         {
-            MessageBar.Show($"Picked up: {name} x {count}");
+            //MessageBar.Show($"Picked up: {name} x {count}");
             model.AddInventoryItem(this);
             UserInterfaceAudio.OnCollect();
 
