@@ -58,13 +58,13 @@ namespace RPGM.UI
             }
         }
 
-        public void Show(SpriteRenderer contextSprite, string text)
+        public void Show(SpriteRenderer contextSprite, string text, bool isAnnika)
         {
             var position = contextSprite.transform.position;
             position.x -= contextSprite.size.x;
             position.y -= contextSprite.size.y * 0.5f;
             position.y += dialogLayout.spriteRenderer.size.y;
-            Show(position, text);
+            Show(position, text, isAnnika);
         }
 
         public void SetButton(int index, string text)
@@ -74,11 +74,11 @@ namespace RPGM.UI
             buttonCount = Mathf.Max(buttonCount, index + 1);
         }
 
-        public void Show(Vector3 position, string text)
+        public void Show(Vector3 position, string text, bool isAnnika)
         {
             var d = dialogLayout;
             d.gameObject.SetActive(true);
-            d.SetText(text);
+            d.SetText(text, isAnnika);
             SetPosition(position);
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 0;
@@ -86,12 +86,12 @@ namespace RPGM.UI
             mousePointer.TalkStart();
         }
 
-        public void Show(Vector3 position, string text, string buttonA)
+        public void Show(Vector3 position, string text, string buttonA, bool isAnnika)
         {
             UserInterfaceAudio.OnShowDialog();
             var d = dialogLayout;
             d.gameObject.SetActive(true);
-            d.SetText(text, buttonA);
+            d.SetText(text, buttonA, isAnnika);
             SetPosition(position);
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 1;
@@ -99,12 +99,12 @@ namespace RPGM.UI
             mousePointer.TalkStart();
         }
 
-        public void Show(Vector3 position, string text, string buttonA, string buttonB)
+        public void Show(Vector3 position, string text, string buttonA, string buttonB, bool isAnnika)
         {
             UserInterfaceAudio.OnShowDialog();
             var d = dialogLayout;
             d.gameObject.SetActive(true);
-            d.SetText(text, buttonA, buttonB);
+            d.SetText(text, buttonA, buttonB, isAnnika);
             SetPosition(position);
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 2;
@@ -119,12 +119,12 @@ namespace RPGM.UI
             spriteUIElement.anchor = position;
         }
 
-        public void Show(Vector3 position, string text, string buttonA, string buttonB, string buttonC)
+        public void Show(Vector3 position, string text, string buttonA, string buttonB, string buttonC, bool isAnnika)
         {
             UserInterfaceAudio.OnShowDialog();
             var d = dialogLayout;
             d.gameObject.SetActive(true);
-            d.SetText(text, buttonA, buttonB, buttonC);
+            d.SetText(text, buttonA, buttonB, buttonC, isAnnika);
             SetPosition(position);
             model.input.ChangeState(InputController.State.DialogControl);
             buttonCount = 3;

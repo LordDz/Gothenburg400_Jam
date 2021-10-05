@@ -52,7 +52,7 @@ namespace RPGM.Events
             }
 
             //show the dialog
-            model.dialog.Show(position, ci.text);
+            model.dialog.Show(position, ci.text, ci.IsOtherCharacter == false);
             var animator = gameObject.GetComponent<Animator>();
             if (animator != null)
             {

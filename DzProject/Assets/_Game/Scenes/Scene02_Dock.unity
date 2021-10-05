@@ -692,13 +692,13 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Next Page
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: PAGE2
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: PAGE2
     text: The sea have been bountiful recently. I hope that will make it easier for
@@ -706,20 +706,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Close Diary
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!114 &82786717
 MonoBehaviour:
@@ -815,33 +815,46 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Gently push the cat away
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: Mraaaw! Screee!
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 1
     options:
-    - text: Sorry kitty! What can I do to make you like me?
+    - text: Sorry kitty!
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.1A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.1A
+    text: Sorry Kitty! Hmm.. What can I do to make you like me?
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: 
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1001 &164971901
 PrefabInstance:
@@ -2430,24 +2443,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - id: A.0
-    text: I thought Gleen was a sober man. But this is a bottle of akvavit.
+    text: I thought Glenn was a sober man. But this is a bottle of akvavit.
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &874427046
 GameObject:
@@ -3301,124 +3314,352 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
-    - text: Please Glenn, tell me what happened.
+    - text: Ask for Svenn
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
-  - id: A.1
-    text: To be honest, I don't remember everything. It was just a normal day when
-      suddenly something looked different. I should not tell you this. It will upset
-      you.
+  - id: A.0_1
+    text: Please Glenn, tell me what happened. Where is Sven?
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
-    options:
-    - text: I can handle it, just tell me Glenn
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.2A
-      IsLastText: 0
-      enabled: 0
-    - text: No, it is so much harder to not know. Please tell me. You are the only
-        one that can help
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.2B
-      IsLastText: 0
-      enabled: 0
-  - id: A.2A
-    text: "Alright, alright. Suddenly, we were surrounded by fog. It was unnatural,
-      a foul weather I tell you, not natural at all. We all felt the most terrible
-      dread. But Sven just stood there on deck, staring at the sea. He said that
-      he saw something and\u2026 no, I can't continue.."
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    IsLastText: 0
-    options:
-    - text: Just tell me!
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.3
-      IsLastText: 0
-      enabled: 0
-  - id: A.2B
-    text: "I\u2019m just worried, this is not a story for a woman like you. But,
-      if you insist, I want you to get some peace of mind. Suddenly we were surrounded
-      by fog. It was unnatural, a foul weather, I tell you, not natural at all. We
-      all felt the most terrible dread. But Sven just stood there on deck, staring
-      at the sea. He said that he saw something and\u2026 no I can't continue..."
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    IsLastText: 0
-    options:
-    - text: I'm sorry if this is hard for you, but please go on.
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.3
-      IsLastText: 0
-      enabled: 0
-  - id: A.3
-    text: "I can\xB4t! Don\u2019t make me talk about it, it hurts my head. Terror
-      is consuming my mind. Stay away, Annika. He is gone."
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    IsLastText: 0
-    options:
-    - text: "No, I can\u2019t stay away. You must tell me"
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.4A
-      IsLastText: 0
-      enabled: 0
-    - text: "I\u2019m sorry. I will not bother you any more."
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.4B
-      IsLastText: 0
-      enabled: 0
-  - id: A.4A
-    text: There was something down at the bottom! He wanted to leave to go down there.
-      To the terrible thing at the bottom. An obelisk, or a pyramid. I can see it
-      in my dream. The sea was calling her. And it will be calling for you if you
-      don't go home, Annika. I need a drink.
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
+      targetId: A.0A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.0A
+    text: 'To be honest, I don''t remember everything. It was just a normal day when
+      suddenly something looked different. '
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.1
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.1
+    text: I should not tell you this. It will upset you.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: I can handle it
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.1_A
+      IsOtherCharacter: 0
+      enabled: 0
+    - text: Please tell me
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.1_B
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.1_A
+    text: I can handle it, just tell me Glenn
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.1_B
+    text: 'No, it is so much harder to not know. Please tell me. '
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2B
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2A
+    text: Alright, alright. Suddenly, we were surrounded by fog. It was unnatural,
+      a foul weather I tell you, not natural at all.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2A_A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2A_A
+    text: ' We all felt the most terrible dread. But Sven just stood there on the
+      deck, '
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2A_B
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2A_B
+    text: "staring at the sea. He said that he saw something and\u2026 no, I can't
+      continue.."
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: Just tell me!
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2C_1
+      IsOtherCharacter: 0
+      enabled: 0
+    - text: Please go on
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2C_2
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2B
+    text: "I\u2019m just worried, this is not a story for a woman like you. But,
+      if you insist, I want you to get some peace of mind."
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2B_A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2B_A
+    text: Suddenly we were surrounded by fog. It was unnatural, a foul weather, I
+      tell you, not natural at all.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2B_B
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2B_B
+    text: "We all felt the most terrible dread. But Sven just stood there on deck,
+      staring at the sea. He said that he saw something and\u2026 no I can't continue..."
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: Just tell me!
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2C_1
+      IsOtherCharacter: 0
+      enabled: 0
+    - text: Please go on
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.2C_2
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2C_1
+    text: Just tell me!
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.3
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.2C_2
+    text: ' I''m sorry if this is hard for you, but please go on.'
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.3
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.3
+    text: "I can\xB4t! Don\u2019t make me talk about it, it hurts my head. Terror
+      is consuming my mind. "
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.3A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.3A
+    text: Stay away, Annika. He is gone.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: You must tell me
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.3A_1
+      IsOtherCharacter: 0
+      enabled: 0
+    - text: "I\u2019m sorry"
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.3A_2
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.3A_1
+    text: "No, I can\u2019t stay away. You must tell me!"
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4A
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.3A_2
+    text: "I\u2019m sorry. I will not bother you any more."
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4B
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.4A
+    text: There was something down at the bottom! He wanted to leave to go down there.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4A_1
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.4A_1
+    text: To the terrible thing at the bottom. An obelisk, or a pyramid.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ....
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4A_2
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.4A_2
+    text: I can see it in my dream. The sea was calling him. And it will be calling
+      for you too if you don't go home, Annika.
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4A_3
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.4A_3
+    text: ....
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: ...
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: A.4A_4
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: A.4A_4
+    text: I need a drink..
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 1
+    options:
+    - text: Take care Glenn.
+      image: {fileID: 0}
+      audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.4B
     text: Go home Annika. I think I need a drink.
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Take care Glenn.
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: 
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &1139159805
 GameObject:
@@ -3860,20 +4101,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Go to the cat
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: 
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!114 &1366507670
 MonoBehaviour:
@@ -4299,20 +4540,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &1684431973
 GameObject:
@@ -5322,59 +5563,59 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Give fish to cat
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: '*Eats fish*'
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 1
     options:
     - text: Try to pet it
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.2A
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
     - text: Take the page
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.2B_EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.2A
     text: '*Purrrrrrrrr..*'
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 1
     options:
     - text: Take the page
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.3_EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.2B_EXIT
     text: 
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
   - id: A.3_EXIT
     text: 
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &2010149591
 GameObject:

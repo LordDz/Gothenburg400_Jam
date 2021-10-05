@@ -70,7 +70,7 @@ namespace RPGM.Gameplay
 
         private void OnAdd(ReorderableList list)
         {
-            list.list.Add(new ConversationOption() { targetId = "", text = "", image = null, IsLastText = false, enabled = true });
+            list.list.Add(new ConversationOption() { targetId = "", text = "", image = null, IsOtherCharacter = false, enabled = true });
         }
 
         void OnWizardCreate()
@@ -130,8 +130,8 @@ namespace RPGM.Gameplay
             conversationPiece.audio = (AudioClip)EditorGUILayout.ObjectField(conversationPiece.audio, typeof(AudioClip), false);
             EditorGUILayout.PrefixLabel("Quest (Optional)");
             conversationPiece.quest = (Quest)EditorGUILayout.ObjectField(conversationPiece.quest, typeof(Quest), true);
-            EditorGUILayout.PrefixLabel("IsLast Text");
-            conversationPiece.IsLastText = (Boolean)EditorGUILayout.Toggle(conversationPiece.IsLastText);
+            EditorGUILayout.PrefixLabel("IsOtherCharacter");
+            conversationPiece.IsOtherCharacter = (Boolean)EditorGUILayout.Toggle(conversationPiece.IsOtherCharacter);
 
             if (conversationScript.items.Count > 0)
             {

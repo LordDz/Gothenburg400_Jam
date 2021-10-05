@@ -12,7 +12,7 @@ namespace RPGM.Gameplay
         public Sprite image;
         public AudioClip audio;
         public string targetId;
-        public bool IsLastText;
+        public bool IsOtherCharacter;
         public bool enabled;
     }
 }

@@ -482,6 +482,8 @@ MonoBehaviour:
   iconRenderer: {fileID: 1057964449011895835}
   spriteRenderer: {fileID: 1057964449200028151}
   textMeshPro: {fileID: 1057964450494933672}
+  textColorAnnika: {r: 1, g: 1, b: 1, a: 1}
+  textColorOther: {r: 0, g: 0, b: 0, a: 1}
   buttonA: {fileID: 1057964450429625170}
   buttonB: {fileID: 1057964448771367550}
   buttonC: {fileID: 1057964450393486521}
@@ -845,7 +847,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1057964450393486526
 Transform:
   m_ObjectHideFlags: 0

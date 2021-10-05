@@ -15,8 +15,12 @@ namespace RPGM.UI
         public SpriteRenderer iconRenderer;
         public SpriteRenderer spriteRenderer;
         public TextMeshPro textMeshPro;
+        public Color textColorAnnika;
+        public Color textColorOther;
+
 
         public SpriteButton buttonA, buttonB, buttonC;
+
 
         [NonSerialized] public SpriteButton[] buttons;
         Vector2 minSize;
@@ -44,9 +48,9 @@ namespace RPGM.UI
             }
         }
 
-        public void SetText(string text)
+        public void SetText(string text, bool isAnnika = true)
         {
-            SetDialogText(text);
+            SetDialogText(text, isAnnika);
             buttonA.gameObject.SetActive(false);
             buttonB.gameObject.SetActive(false);
             buttonC.gameObject.SetActive(false);
@@ -58,18 +62,18 @@ namespace RPGM.UI
             buttons[index].gameObject.SetActive(true);
         }
 
-        public void SetText(string text, string buttonAText)
+        public void SetText(string text, string buttonAText, bool isAnnika = true)
         {
-            SetDialogText(text);
+            SetDialogText(text, isAnnika);
             buttonA.gameObject.SetActive(true);
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(false);
             //buttonC.gameObject.SetActive(false);
         }
 
-        public void SetText(string text, string buttonAText, string buttonBText)
+        public void SetText(string text, string buttonAText, string buttonBText, bool isAnnika = true)
         {
-            SetDialogText(text);
+            SetDialogText(text, isAnnika);
             buttonA.gameObject.SetActive(true);
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(true);
@@ -77,9 +81,9 @@ namespace RPGM.UI
             //buttonC.gameObject.SetActive(false);
         }
 
-        public void SetText(string text, string buttonAText, string buttonBText, string buttonCText)
+        public void SetText(string text, string buttonAText, string buttonBText, string buttonCText, bool isAnnika = true)
         {
-            SetDialogText(text);
+            SetDialogText(text, isAnnika);
             buttonA.gameObject.SetActive(true);
             buttonA.SetText(buttonAText);
             buttonB.gameObject.SetActive(true);
@@ -89,9 +93,17 @@ namespace RPGM.UI
         }
 
 
-        void SetDialogText(string text)
+        void SetDialogText(string text, bool isAnnika = true)
         {
             textMeshPro.text = text;
+            if (isAnnika)
+            {
+                textMeshPro.color = textColorAnnika;
+            }
+            else
+            {
+                textMeshPro.color = textColorOther; ;
+            }
             ScaleBackgroundToFitText();
         }
 

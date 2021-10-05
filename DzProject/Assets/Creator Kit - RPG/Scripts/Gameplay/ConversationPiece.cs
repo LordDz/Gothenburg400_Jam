@@ -19,7 +19,7 @@ namespace RPGM.Gameplay
         public Sprite image;
         public AudioClip audio;
         public Quest quest;
-        public bool IsLastText;
+        public bool IsOtherCharacter;
         public List<ConversationOption> options;
     }
 }

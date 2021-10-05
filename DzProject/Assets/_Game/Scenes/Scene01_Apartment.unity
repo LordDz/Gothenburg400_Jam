@@ -889,34 +889,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
-    options:
-    - text: ...
-      image: {fileID: 0}
-      audio: {fileID: 0}
-      targetId: A.0BB
-      IsLastText: 0
-      enabled: 0
-  - id: A.0BB
-    text: What is he going on about? What father, his father died a long time ago.
-      Is he talking about God?
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &295823822
 GameObject:
@@ -2009,39 +1995,39 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Hmm..
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: I hate it, but, still, something in it calls to me..
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.2
     text: What's this? Pages from Svens diary?
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.3
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.3
     text: What is he going on about? What father, his father died a long time ago.
@@ -2049,20 +2035,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &922128877
 GameObject:
@@ -2939,20 +2925,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Continue
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &1139159805
 GameObject:
@@ -3503,13 +3489,13 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 1
     options:
     - text: Next Page
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: PAGE2
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: PAGE2
     text: The sea have been bountiful recently. I hope that will make it easier for
@@ -3517,20 +3503,34 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 1
+    options:
+    - text: What is going on?
+      image: {fileID: 0}
+      audio: {fileID: 0}
+      targetId: PAGE2_ANNIKA
+      IsOtherCharacter: 0
+      enabled: 0
+  - id: PAGE2_ANNIKA
+    text: What is he going on about? What father, his father died a long time ago.
+      Is he talking about God?
+    image: {fileID: 0}
+    audio: {fileID: 0}
+    quest: {fileID: 0}
+    IsOtherCharacter: 0
     options:
     - text: Close Diary
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: EXIT
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: EXIT
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!114 &1366507670
 MonoBehaviour:
@@ -4454,33 +4454,33 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: Where are you Sven? When you return, you will get your fish heated...
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: ...
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.2
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.2
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!1 &2122989793
 GameObject:
@@ -4553,20 +4553,20 @@ MonoBehaviour:
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options:
     - text: Continue
       image: {fileID: 0}
       audio: {fileID: 0}
       targetId: A.1
-      IsLastText: 0
+      IsOtherCharacter: 0
       enabled: 0
   - id: A.1
     text: Exit
     image: {fileID: 0}
     audio: {fileID: 0}
     quest: {fileID: 0}
-    IsLastText: 0
+    IsOtherCharacter: 0
     options: []
 --- !u!114 &552800616666910420
 MonoBehaviour:
